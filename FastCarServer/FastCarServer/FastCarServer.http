@@ -1,0 +1,6 @@
+@FastCarServer_HostAddress = http://localhost:5138
+
+GET {{FastCarServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
