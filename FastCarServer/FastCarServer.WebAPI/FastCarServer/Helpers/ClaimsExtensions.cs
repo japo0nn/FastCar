@@ -1,4 +1,4 @@
-﻿using FastCarServer.Data;
+﻿using FastCarServer.Core.Data;
 using System.Security.Claims;
 
 namespace FastCarServer.WebAPI.Helpers

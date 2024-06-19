@@ -19,11 +19,10 @@ using System.Text;
 using System.Security.Cryptography;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using FastCarServer.WebAPI.View;
-using FastCarServer.WebAPI.Enums;
 using FastCarServer.WebAPI.Helpers;
-using FastCarServer.WebAPI.Dto.User;
+using FastCarServer.Application.Common.DTO;
 using FastCarServer.Infrastructure.Data;
+using FastCarServer.Application.Common.Views;
 
 namespace FastCarServer.WebAPI.Controllers
 {
@@ -68,10 +67,10 @@ namespace FastCarServer.WebAPI.Controllers
             return verificationCode.ToString();
         }
 
-        [HttpPost("verify")]
+        /*[HttpPost("verify")]
         public async Task<IActionResult> VerifyPhoneNumber([FromBody] LoginViewModel model)
         {
-            /*var existingPhoneNumber = await _userManager.FindByNameAsync(model.PhoneNumber);
+            *//*var existingPhoneNumber = await _userManager.FindByNameAsync(model.PhoneNumber);
             string token = "";
             if (existingPhoneNumber == null)
             {
@@ -95,20 +94,20 @@ namespace FastCarServer.WebAPI.Controllers
             }
 
             token = await Token(existingPhoneNumber);
-            return Ok(new { token });*/
-        }
+            return Ok(new { token });*//*
+        }*/
 
-        [HttpGet]
+        /*[HttpGet]
         [Route("info")]
         public async Task<UserDto> CurrentUser()
         {
-            /*var sss = User.ToUserInfo().Username;
+            *//*var sss = User.ToUserInfo().Username;
             var user = await _context.Users
                 .Include(x => x.IdentityUser)
                 .SingleOrDefaultAsync(x => x.IdentityUser.UserName == User.ToUserInfo().Username);
 
-            return Mapper.Map<User, UserDto>(user);*/
-        }
+            return Mapper.Map<User, UserDto>(user);*//*
+        }*/
 
         private async Task<string> Token(IdentityUser user)
         {

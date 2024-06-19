@@ -1,4 +1,4 @@
-﻿namespace FastCarServer.Data
+﻿namespace FastCarServer.Core.Data
 {
     public class UserInfo
     {

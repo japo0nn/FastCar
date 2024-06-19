@@ -1,5 +1,4 @@
-﻿using FastCarServer.Core.Data.Abstract;
-using FastCarServer.Core.Enums;
+﻿using FastCarServer.Core.Enums;
 using Microsoft.AspNetCore.Identity;
 
 namespace FastCarServer.Core.Data

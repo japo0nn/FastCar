@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastCarServer.Core", "..\Fa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastCarServer.Infrastructure", "..\FastCarServer.Infrastructure\FastCarServer.Infrastructure\FastCarServer.Infrastructure.csproj", "{008E7D62-B363-497D-9CE4-1EAF146A659C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastCarCore.Application", "..\FastCarCore.Application\FastCarCore.Application\FastCarCore.Application.csproj", "{9EEDDB46-CBA7-45DF-BA13-8FE555DB4CC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastCarServer.Application", "..\FastCarServer.Application\FastCarServer.Application\FastCarServer.Application.csproj", "{7898C53F-3A14-4BB2-9D7A-3BFB26897A5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{008E7D62-B363-497D-9CE4-1EAF146A659C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{008E7D62-B363-497D-9CE4-1EAF146A659C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{008E7D62-B363-497D-9CE4-1EAF146A659C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9EEDDB46-CBA7-45DF-BA13-8FE555DB4CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EEDDB46-CBA7-45DF-BA13-8FE555DB4CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EEDDB46-CBA7-45DF-BA13-8FE555DB4CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9EEDDB46-CBA7-45DF-BA13-8FE555DB4CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7898C53F-3A14-4BB2-9D7A-3BFB26897A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7898C53F-3A14-4BB2-9D7A-3BFB26897A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7898C53F-3A14-4BB2-9D7A-3BFB26897A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7898C53F-3A14-4BB2-9D7A-3BFB26897A5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

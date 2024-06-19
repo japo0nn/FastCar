@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FastCarServer.Data;
 using FastCarServer.Infrastructure.Data;
 using AutoMapper;
 using FastCarServer.Core.Data.Passenger;
-using FastCarServer.WebAPI.Dto.Passenger;
+using FastCarServer.Application.Common.DTO.Passenger;
 
 namespace FastCarServer.WebAPI.Controllers
 {
@@ -24,13 +18,13 @@ namespace FastCarServer.WebAPI.Controllers
             _context = context;
         }
 
-
+/*
         [HttpGet("getCategories")]
         public async Task<List<PassengerCategoryDto>> AddCategory()
         {
             var categories = await _context.PassengerCategories.ToListAsync();
 
             return Mapper.Map<List<PassengerCategory>, List<PassengerCategoryDto>>(categories);
-        }
+        }*/
     }
 }

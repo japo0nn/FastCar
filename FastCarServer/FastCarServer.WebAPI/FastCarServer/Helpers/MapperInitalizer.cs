@@ -1,12 +1,9 @@
-﻿using AutoMapper;
-using FastCarServer.Data;
-using FastCarServer.Data.CarAbstract;
-using FastCarServer.Data.Passenger;
-using FastCarServer.Data.User;
-using FastCarServer.WebAPI.Dto;
-using FastCarServer.WebAPI.Dto.CarAbstract;
-using FastCarServer.WebAPI.Dto.Passenger;
-using FastCarServer.WebAPI.Dto.User;
+﻿/*using AutoMapper;
+using FastCarServer.Core.Data;
+using FastCarServer.Core.Data.CarAbstract;
+using FastCarServer.Core.Data.Passenger;
+using FastCarServer.Application.Common.DTO;
+using FastCarServer.Application.Common.DTO.CarAbstract;
 
 namespace FastCarServer.WebAPI.Helpers
 {
@@ -20,10 +17,6 @@ namespace FastCarServer.WebAPI.Helpers
                 Mapper.Reset();
                 Mapper.Initialize(cfg =>
                 {
-                    cfg.CreateMap<User, UserDto>().ForMember(
-                        dest => dest.PhoneNumber,
-                        opt => opt.MapFrom(src => src.IdentityUser.PhoneNumber));
-
 
                     cfg.CreateMap<Category, CategoryDto>();
                     cfg.CreateMap<Field, FieldDto>();
@@ -44,3 +37,4 @@ namespace FastCarServer.WebAPI.Helpers
         }
     }
 }
+*/

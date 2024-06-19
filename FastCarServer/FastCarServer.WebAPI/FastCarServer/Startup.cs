@@ -1,6 +1,5 @@
-﻿using FastCarServer.Context;
-using FastCarServer.WebAPI.Helpers;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using FastCarServer.Application;
+using FastCarServer.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -20,7 +19,11 @@ namespace FastCarServer.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            string connection = Configuration.GetConnectionString("DevConnection");
+
+            services.AddInfastractureServices(Configuration);
+            services.AddApplicationServices();
+            services.AddWebServices();
+            /*string connection = Configuration.GetConnectionString("DevConnection");
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(connection));
@@ -97,7 +100,7 @@ namespace FastCarServer.WebAPI
                         },new List<string>()
                     }
                 });
-            });
+            });*/
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -108,7 +111,6 @@ namespace FastCarServer.WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FastCar.WebApi v1"));
             }
-
 
             app.UseCors("CorsPolicy");
             //
