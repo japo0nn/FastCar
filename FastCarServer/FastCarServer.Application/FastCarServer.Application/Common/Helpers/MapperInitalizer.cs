@@ -1,9 +1,10 @@
-﻿/*using AutoMapper;
+﻿using AutoMapper;
 using FastCarServer.Core.Data;
 using FastCarServer.Core.Data.CarAbstract;
 using FastCarServer.Core.Data.Passenger;
 using FastCarServer.Application.Common.DTO;
 using FastCarServer.Application.Common.DTO.CarAbstract;
+using FastCarServer.Application.Common.DTO.Passenger;
 
 namespace FastCarServer.WebAPI.Helpers
 {
@@ -21,7 +22,7 @@ namespace FastCarServer.WebAPI.Helpers
                     cfg.CreateMap<Category, CategoryDto>();
                     cfg.CreateMap<Field, FieldDto>();
                     cfg.CreateMap<FieldOption, FieldOptionDto>();
-                    cfg.CreateMap<Properties, PropertyDto>();
+                    cfg.CreateMap<Property, PropertyDto>();
 
                     cfg.CreateMap<PassengerCategory, PassengerCategoryDto>();
                     cfg.CreateMap<PassengerBrand, PassengerBrandDto>();
@@ -37,4 +38,3 @@ namespace FastCarServer.WebAPI.Helpers
         }
     }
 }
-*/

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace FastCarServer.Application.Common.Interfaces
 {
-    public interface ISendVerificationCode
+    public interface IVerificationService
     {
-        Task SendCode(ApplicationUser user);
+        Task<string> VerifyPhoneNumber(string number);
     }
 }

@@ -1,7 +1,9 @@
 ﻿using Ardalis.GuardClauses;
+using FastCarServer.Application.Common.Interfaces;
 using FastCarServer.Application.Common.Interfaces.Data;
 using FastCarServer.Core.Data;
 using FastCarServer.Infrastructure.Data;
+using FastCarServer.Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -20,6 +22,7 @@ namespace FastCarServer.Infrastructure
         public static IServiceCollection AddInfastractureServices(this IServiceCollection services, IConfiguration configuration)
         {
             string connectionString = configuration.GetConnectionString("DevConnection");
+
             services.AddDbContext<ApplicationDbContext>((sp, options) =>
             {
                 options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
@@ -29,6 +32,8 @@ namespace FastCarServer.Infrastructure
 
             services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
             services.AddScoped<ApplicationDbContextInitialiser>();
+
+            services.AddScoped<IVerificationService, VerificationService>();
 
             services.AddAuthentication()
             .AddBearerToken(IdentityConstants.BearerScheme);

@@ -23,6 +23,9 @@ namespace FastCarServer.WebAPI
             services.AddInfastractureServices(Configuration);
             services.AddApplicationServices();
             services.AddWebServices();
+            services.AddControllers();
+            services.AddEndpointsApiExplorer();
+            services.AddSwaggerGen();
             /*string connection = Configuration.GetConnectionString("DevConnection");
 
             services.AddDbContext<AppDbContext>(options =>

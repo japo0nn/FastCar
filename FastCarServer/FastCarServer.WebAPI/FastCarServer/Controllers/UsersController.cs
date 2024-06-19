@@ -19,10 +19,12 @@ using System.Text;
 using System.Security.Cryptography;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using FastCarServer.WebAPI.Helpers;
 using FastCarServer.Application.Common.DTO;
 using FastCarServer.Infrastructure.Data;
 using FastCarServer.Application.Common.Views;
+using FastCarServer.Application.Common.Helpers;
+using FastCarServer.Application.Common.Interfaces;
+using FastCarServer.Infrastructure.Services;
 
 namespace FastCarServer.WebAPI.Controllers
 {
@@ -30,17 +32,19 @@ namespace FastCarServer.WebAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ApplicationDbContext _context;
+        private readonly IVerificationService _verificationService;
 
-        public UsersController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<IdentityUser> signInManager, ApplicationDbContext context)
+        public UsersController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager, ApplicationDbContext context, IVerificationService verificationService)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
             _context = context;
+            _verificationService = verificationService;
         }
 
         [HttpPost("check-number")]
@@ -53,9 +57,10 @@ namespace FastCarServer.WebAPI.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<string> SignUp([FromBody] LoginViewModel model)
+        public async Task SignIn([FromBody] LoginViewModel model)
         {
-            Random random = new Random();
+            _verificationService.VerifyPhoneNumber(model.PhoneNumber);
+            /*Random random = new Random();
             int verificationCode = random.Next(1000, 10000);
             TwilioClient.Init("AC79274582fc4814ef9bae241215dd7077", "bf31c5a92e0b0a974e968a4d06b770a5");
             var message = MessageResource.Create(
@@ -64,7 +69,7 @@ namespace FastCarServer.WebAPI.Controllers
                 body: $"Verification Code: {verificationCode}"
             );
 
-            return verificationCode.ToString();
+            return verificationCode.ToString();*/
         }
 
         /*[HttpPost("verify")]
