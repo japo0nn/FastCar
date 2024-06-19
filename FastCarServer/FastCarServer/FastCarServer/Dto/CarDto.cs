@@ -1,7 +1,7 @@
-﻿using FastCarServer.Dto.Abstract;
-using FastCarServer.Dto.CarAbstract;
+﻿using FastCarServer.WebAPI.Dto.Abstract;
+using FastCarServer.WebAPI.Dto.CarAbstract;
 
-namespace FastCarServer.Dto
+namespace FastCarServer.WebAPI.Dto
 {
     public class CarDto : MainDto
     {

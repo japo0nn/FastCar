@@ -5,16 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FastCarServer.Context;
-using FastCarServer.Data.User;
+using FastCarServer.Core.Data;
 using Microsoft.AspNetCore.Identity;
-using FastCarServer.View;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using FastCarServer.Helpers;
 using Twilio;
 using Twilio.Types;
 using Twilio.Rest.Api.V2010.Account;
@@ -22,9 +19,13 @@ using System.Text;
 using System.Security.Cryptography;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using FastCarServer.Dto.User;
+using FastCarServer.WebAPI.View;
+using FastCarServer.WebAPI.Enums;
+using FastCarServer.WebAPI.Helpers;
+using FastCarServer.WebAPI.Dto.User;
+using FastCarServer.Infrastructure.Data;
 
-namespace FastCarServer.Controllers
+namespace FastCarServer.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -33,9 +34,9 @@ namespace FastCarServer.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UsersController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<IdentityUser> signInManager, AppDbContext context)
+        public UsersController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<IdentityUser> signInManager, ApplicationDbContext context)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -50,7 +51,6 @@ namespace FastCarServer.Controllers
 
             if (existingPhoneNumber != null) return BadRequest();
             else return Ok();
-            
         }
 
         [HttpPost("login")]
@@ -71,7 +71,7 @@ namespace FastCarServer.Controllers
         [HttpPost("verify")]
         public async Task<IActionResult> VerifyPhoneNumber([FromBody] LoginViewModel model)
         {
-            var existingPhoneNumber = await _userManager.FindByNameAsync(model.PhoneNumber);
+            /*var existingPhoneNumber = await _userManager.FindByNameAsync(model.PhoneNumber);
             string token = "";
             if (existingPhoneNumber == null)
             {
@@ -83,9 +83,9 @@ namespace FastCarServer.Controllers
                 };
                 await _userManager.CreateAsync(user);
 
-                var person = new User();
+                var person = new ApplicationUser();
                 person.IdentityUser = user;
-                person.Verification = Enums.VerificationType.None;
+                person.Verification = VerificationType.None;
 
                 await _context.Users.AddAsync(person);
                 await _context.SaveChangesAsync(default);
@@ -95,19 +95,19 @@ namespace FastCarServer.Controllers
             }
 
             token = await Token(existingPhoneNumber);
-            return Ok(new { token });
+            return Ok(new { token });*/
         }
 
         [HttpGet]
         [Route("info")]
         public async Task<UserDto> CurrentUser()
         {
-            var sss = User.ToUserInfo().Username;
+            /*var sss = User.ToUserInfo().Username;
             var user = await _context.Users
                 .Include(x => x.IdentityUser)
                 .SingleOrDefaultAsync(x => x.IdentityUser.UserName == User.ToUserInfo().Username);
 
-            return Mapper.Map<User, UserDto>(user);
+            return Mapper.Map<User, UserDto>(user);*/
         }
 
         private async Task<string> Token(IdentityUser user)

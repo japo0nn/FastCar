@@ -5,22 +5,21 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FastCarServer.Data.CarAbstract;
-using FastCarServer.Context;
+using FastCarServer.Infrastructure.Data;
 
-namespace FastCarServer.Controllers
+namespace FastCarServer.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class FieldsController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public FieldsController(AppDbContext context)
+        public FieldsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        
+
     }
 }

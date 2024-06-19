@@ -1,6 +1,7 @@
-﻿using FastCarServer.Dto.Abstract;
+﻿using FastCarServer.WebAPI.Dto.Abstract;
+using FastCarServer.WebAPI.Enums;
 
-namespace FastCarServer.Dto.CarAbstract
+namespace FastCarServer.WebAPI.Dto.CarAbstract
 {
     public class PropertyDto : MainDto
     {
@@ -12,17 +13,17 @@ namespace FastCarServer.Dto.CarAbstract
 
         public PropertyDto()
         {
-            if (Field.FieldType == Enums.FieldType.String || Field.FieldType == Enums.FieldType.Option)
+            if (Field.FieldType == FieldType.String || Field.FieldType == FieldType.Option)
             {
                 IntValue = null;
                 FloatValue = null;
             }
-            if (Field.FieldType == Enums.FieldType.Int)
+            if (Field.FieldType == FieldType.Int)
             {
                 StringValue = null;
                 FloatValue = null;
             }
-            if (Field.FieldType == Enums.FieldType.Float)
+            if (Field.FieldType == FieldType.Float)
             {
                 IntValue = null;
                 StringValue = null;

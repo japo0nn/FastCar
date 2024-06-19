@@ -1,4 +1,6 @@
-﻿namespace FastCarServer.Dto.Passenger
+﻿using FastCarServer.WebAPI.Dto;
+
+namespace FastCarServer.WebAPI.Dto.Passenger
 {
     public class PassengerCarDto : CarDto
     {

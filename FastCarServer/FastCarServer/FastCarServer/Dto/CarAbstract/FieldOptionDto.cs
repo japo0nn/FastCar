@@ -1,4 +1,4 @@
-﻿namespace FastCarServer.Dto.CarAbstract
+﻿namespace FastCarServer.WebAPI.Dto.CarAbstract
 {
     public class FieldOptionDto
     {

@@ -1,4 +1,4 @@
-﻿namespace FastCarServer.Enums
+﻿namespace FastCarServer.WebAPI.Enums
 {
     public enum VerificationType
     {

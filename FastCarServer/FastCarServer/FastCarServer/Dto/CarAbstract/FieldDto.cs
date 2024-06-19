@@ -1,7 +1,7 @@
-﻿using FastCarServer.Dto.Abstract;
-using FastCarServer.Enums;
+﻿using FastCarServer.WebAPI.Dto.Abstract;
+using FastCarServer.WebAPI.Enums;
 
-namespace FastCarServer.Dto.CarAbstract
+namespace FastCarServer.WebAPI.Dto.CarAbstract
 {
     public class FieldDto : MainDto
     {

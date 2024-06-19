@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FastCarServer.View
+namespace FastCarServer.WebAPI.View
 {
     public class LoginViewModel
     {

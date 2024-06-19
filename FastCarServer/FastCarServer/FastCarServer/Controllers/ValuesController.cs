@@ -2,19 +2,19 @@
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.X509Certificates;
 using FastCarServer.Core.Data.Passenger;
-using FastCarServer.Infrastructure.Data.Configurations;
+using FastCarServer.Infrastructure.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace FastCarServer.Controllers
+namespace FastCarServer.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ValuesController(AppDbContext context)
+        public ValuesController(ApplicationDbContext context)
         {
             _context = context;
         }

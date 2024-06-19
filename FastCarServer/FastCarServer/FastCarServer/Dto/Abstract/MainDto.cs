@@ -1,4 +1,4 @@
-﻿namespace FastCarServer.Dto.Abstract
+﻿namespace FastCarServer.WebAPI.Dto.Abstract
 {
     public class MainDto
     {

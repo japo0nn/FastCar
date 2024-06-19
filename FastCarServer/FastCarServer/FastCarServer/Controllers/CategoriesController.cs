@@ -6,25 +6,25 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FastCarServer.Data;
-using FastCarServer.Context;
-using FastCarServer.Dto.Passenger;
+using FastCarServer.Infrastructure.Data;
 using AutoMapper;
-using FastCarServer.Data.Passenger;
+using FastCarServer.Core.Data.Passenger;
+using FastCarServer.WebAPI.Dto.Passenger;
 
-namespace FastCarServer.Controllers
+namespace FastCarServer.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public CategoriesController(AppDbContext context)
+        public CategoriesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-       
+
         [HttpGet("getCategories")]
         public async Task<List<PassengerCategoryDto>> AddCategory()
         {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace FastCarServer.Helpers
+namespace FastCarServer.WebAPI.Helpers
 {
     public class AuthOptions
     {

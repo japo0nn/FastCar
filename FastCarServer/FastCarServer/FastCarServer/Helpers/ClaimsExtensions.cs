@@ -1,7 +1,7 @@
 ﻿using FastCarServer.Data;
 using System.Security.Claims;
 
-namespace FastCarServer.Helpers
+namespace FastCarServer.WebAPI.Helpers
 {
     public static class ClaimsExtensions
     {

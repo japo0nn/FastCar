@@ -3,12 +3,12 @@ using FastCarServer.Data;
 using FastCarServer.Data.CarAbstract;
 using FastCarServer.Data.Passenger;
 using FastCarServer.Data.User;
-using FastCarServer.Dto;
-using FastCarServer.Dto.CarAbstract;
-using FastCarServer.Dto.Passenger;
-using FastCarServer.Dto.User;
+using FastCarServer.WebAPI.Dto;
+using FastCarServer.WebAPI.Dto.CarAbstract;
+using FastCarServer.WebAPI.Dto.Passenger;
+using FastCarServer.WebAPI.Dto.User;
 
-namespace FastCarServer.Helpers
+namespace FastCarServer.WebAPI.Helpers
 {
     public class MapperInitalizer
     {

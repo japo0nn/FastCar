@@ -1,5 +1,5 @@
 ﻿using FastCarServer.Context;
-using FastCarServer.Helpers;
+using FastCarServer.WebAPI.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 
-namespace FastCarServer
+namespace FastCarServer.WebAPI
 {
     public class Startup
     {
